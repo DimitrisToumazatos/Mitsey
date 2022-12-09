@@ -1,6 +1,7 @@
 #include "interface.h"
 #include "graphics.h"
 #include "config.h"
+#include "button.h"
 
 void Interface::init()
 {
@@ -32,11 +33,26 @@ void Interface::draw()
 	br.fill_opacity = 0.5f;
 
 	graphics::drawRect(CANVAS_WIDTH/2, 40, CANVAS_WIDTH, 80, br);
+
+	if (b) { b->draw(); }
 }
 
 void Interface::update()
 {
+	if (!b_init && graphics::getGlobalTime() > 1000)
+	{
+		graphics::Brush br;
+		br.fill_color[0] = 1.0f;
+		br.fill_color[1] = 0.5f;
+		br.fill_color[2] = 0.5f;
+		b = new Button(CANVAS_WIDTH/2, CANVAS_HEIGHT/2, 100, 100, br);
+		b_init = true;
+	}
 
+	if (b)
+	{
+		b->update();
+	}
 }
 
 Interface::Interface()
@@ -45,4 +61,5 @@ Interface::Interface()
 
 Interface::~Interface()
 {
+	if (b) { delete b; }
 }
