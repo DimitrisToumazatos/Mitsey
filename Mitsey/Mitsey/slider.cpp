@@ -5,7 +5,7 @@
 
 void Slider::draw()
 {
-	graphics::drawRect(pos_x, pos_y, 100, 2, line);		// draw slider line
+	graphics::drawRect(start_x, start_y, 100, 2, line);		// draw slider line
 	char date_start[5];
 	sprintf_s(date_start, "%d", min_date);
 	char date_end[5];
@@ -32,6 +32,33 @@ void Slider::init()
 void Slider::update()
 {
 
+	graphics::MouseState ms;
+	graphics::getMouseState(ms);
+	float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
+	float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
+
+	if (contains(mx, my))
+	{
+		setHighlighted(true);
+		if (ms.dragging)
+		{
+			setPosX(mx);
+			if (pos_x < min_x)
+			{
+				pos_x = min_x;
+			}
+			else if (pos_x > max_x)
+			{
+				pos_x = max_x;
+			}
+
+		}
+	}
+	else
+	{
+		setHighlighted(false);
+	}
+	cur_date = static_cast<int>(std::round(min_date + ((pos_x - min_x) / 100.0f * (max_date - min_date))));
 }
 
 bool Slider::contains(float x, float y)

@@ -87,43 +87,14 @@ void Interface::update()
 		br.fill_color[0] = 1.0f;
 		br.fill_color[1] = 0.5f;
 		br.fill_color[2] = 0.0f;
-		s1 = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 2000, 2010, "To:   ", br);
-		
+		s1 = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 2000, 2010, "To:   ", br);		
 		s2 = new Slider(CANVAS_WIDTH - 200, 40, 10, 10, 2000, 2010,"From:   ", br);
-
 		s_init = true;
-
 	}
 
 	if (s1 && s2)
 	{
-		graphics::MouseState ms;
-		graphics::getMouseState(ms);
-
-		float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
-		float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
-		s1->update();
-
-		Button* curr_button = nullptr;
-		if (s1->contains(mx, my))
-		{
-			s1->setHighlighted(true);
-		}
-		else
-		{
-			s1->setHighlighted(false);
-		}
-
+		s1->update(); 
 		s2->update();
-
-		curr_button = nullptr;
-		if (s2->contains(mx, my))
-		{
-			s2->setHighlighted(true);
-		}
-		else
-		{
-			s2->setHighlighted(false);
-		}
 	}
 }
