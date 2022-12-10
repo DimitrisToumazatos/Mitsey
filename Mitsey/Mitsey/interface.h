@@ -9,7 +9,9 @@ class Interface
 	Button* m_active_button = nullptr;
 	bool b_init = false;
 
-	Slider* s = nullptr;
+	Slider * s1 = nullptr;
+	Slider * s2= nullptr;
+
 	bool s_init = false;
 public:
 	void init();
@@ -18,6 +20,7 @@ public:
 	~Interface()
 	{
 		if (b) { delete b; }
-		if (s) { delete s; }
+		delete s1;
+		delete s2;
 	}
 };

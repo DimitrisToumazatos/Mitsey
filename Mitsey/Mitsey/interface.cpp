@@ -6,7 +6,7 @@
 
 void Interface::init()
 {
-	//	graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
+		graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
 }
 
 void Interface::draw()
@@ -36,8 +36,9 @@ void Interface::draw()
 	graphics::drawRect(CANVAS_WIDTH/2, 40, CANVAS_WIDTH, 80, br);
 
 	if (b) { b->draw(); }
-
-	if (s) { s->draw(); }
+	if (s1) { s1->draw(); }
+	if (s2) { s2->draw(); }
+	
 }
 
 void Interface::update()
@@ -86,32 +87,43 @@ void Interface::update()
 		br.fill_color[0] = 1.0f;
 		br.fill_color[1] = 0.5f;
 		br.fill_color[2] = 0.0f;
-		s = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 2000, 2010, br);
+		s1 = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 2000, 2010, "To:   ", br);
+		
+		s2 = new Slider(CANVAS_WIDTH - 200, 40, 10, 10, 2000, 2010,"From:   ", br);
 
 		s_init = true;
 
 	}
 
-	if (s)
+	if (s1 && s2)
 	{
 		graphics::MouseState ms;
 		graphics::getMouseState(ms);
 
 		float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
 		float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
-		s->update();
+		s1->update();
 
 		Button* curr_button = nullptr;
-		if (s->contains(mx, my))
+		if (s1->contains(mx, my))
 		{
-			s->setHighlighted(true);
+			s1->setHighlighted(true);
 		}
 		else
 		{
-			s->setHighlighted(false);
+			s1->setHighlighted(false);
 		}
-	
 
+		s2->update();
+
+		curr_button = nullptr;
+		if (s2->contains(mx, my))
+		{
+			s2->setHighlighted(true);
+		}
+		else
+		{
+			s2->setHighlighted(false);
+		}
 	}
-
 }
