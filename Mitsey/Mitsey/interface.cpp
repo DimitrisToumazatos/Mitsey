@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include "config.h"
 #include "button.h"
+#include "slider.h"
 
 void Interface::init()
 {
@@ -34,9 +35,9 @@ void Interface::draw()
 
 	graphics::drawRect(CANVAS_WIDTH/2, 40, CANVAS_WIDTH, 80, br);
 
-
-
 	if (b) { b->draw(); }
+
+	if (s) { s->draw(); }
 }
 
 void Interface::update()
@@ -56,8 +57,8 @@ void Interface::update()
 		graphics::MouseState ms;
 		graphics::getMouseState(ms);
 
-		float mx = graphics::windowToCanvasX(ms.cur_pos_x);
-		float my = graphics::windowToCanvasY(ms.cur_pos_y);
+		float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
+		float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
 		b->update();
 
 		Button* curr_button = nullptr;
@@ -79,13 +80,38 @@ void Interface::update()
 
 	}
 
-}
+	if (!s_init && graphics::getGlobalTime() > 1000)
+	{
+		graphics::Brush br;
+		br.fill_color[0] = 1.0f;
+		br.fill_color[1] = 0.5f;
+		br.fill_color[2] = 0.0f;
+		s = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 2000, 2010, br);
 
-Interface::Interface()
-{
-}
+		s_init = true;
 
-Interface::~Interface()
-{
-	if (b) { delete b; }
+	}
+
+	if (s)
+	{
+		graphics::MouseState ms;
+		graphics::getMouseState(ms);
+
+		float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
+		float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
+		s->update();
+
+		Button* curr_button = nullptr;
+		if (s->contains(mx, my))
+		{
+			s->setHighlighted(true);
+		}
+		else
+		{
+			s->setHighlighted(false);
+		}
+	
+
+	}
+
 }

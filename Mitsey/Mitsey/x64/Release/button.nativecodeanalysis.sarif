@@ -1,0 +1,67 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/ditou/desktop/progarmming in c ++/mitsey/mitsey/mitsey/button.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "22498e2c9ab46417d449aa4ad6b532ea978b5742acac22346a73ec95249f83f6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ditou/desktop/progarmming in c ++/mitsey/mitsey/mitsey/button.h"
+          },
+          "hashes": {
+            "sha-256": "01dd3b779c08f234dc0694eac3eac738bf3245393b8d2c029d8f2dbf44921499"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ditou/desktop/progarmming in c ++/mitsey/mitsey/sgg/include/graphics.h"
+          },
+          "hashes": {
+            "sha-256": "ef68d3653760c119a5d5394e4923d3f43fb83312c8b140f4cf018a3e5d320eb3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ditou/desktop/progarmming in c ++/mitsey/mitsey/sgg/include/scancodes.h"
+          },
+          "hashes": {
+            "sha-256": "a6f42d344f6a126114690250043a0ae35fbcfe17dedf352ade402911ad84f4dd"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/ditou/desktop/progarmming in c ++/mitsey/mitsey/mitsey/widget.h"
+          },
+          "hashes": {
+            "sha-256": "cf8f37dfecf4a4af72ec24da8c16df1506a255d63b23fed0e363272934b5c8ef"
+          }
+        }
+      ]
+    }
+  ]
+}

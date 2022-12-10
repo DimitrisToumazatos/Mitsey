@@ -27,7 +27,7 @@ public:
 	void update() override;
 	void draw() override;
 	void init() override;
-	bool contains(float x, float y);
+	virtual bool contains(float x, float y);
 	Button(float x, float y, float h, float w, graphics::Brush br)
 	{
 		setPosX(x);
@@ -35,8 +35,5 @@ public:
 		setH(h);
 		setW(w);
 		setStyle(br);
-	}
-	~Button()
-	{
 	}
 };
