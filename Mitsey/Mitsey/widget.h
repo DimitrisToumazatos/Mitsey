@@ -20,7 +20,7 @@ public:
 	virtual float getPosY() = 0;
 	virtual float getH() = 0;
 	virtual float getW() = 0;
-	virtual void update() = 0;
+	virtual void update(graphics::MouseState ms) = 0;
 	virtual void draw() = 0;
 	virtual void init() = 0;
 };

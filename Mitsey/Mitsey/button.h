@@ -24,11 +24,11 @@ public:
 	float getPosY() override;
 	float getH() override;
 	float getW() override;
-	void update() override;
+	void update(graphics::MouseState ms) override;
 	void draw() override;
 	void init() override;
 	virtual bool contains(float x, float y);
-	Button(float x, float y, float h, float w, graphics::Brush br)
+	Button(float x, float y, float w, float h, graphics::Brush br)
 	{
 		setPosX(x);
 		setPosY(y);

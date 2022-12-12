@@ -19,7 +19,6 @@ public:
 	void draw();
 	void init();
 	void update();
-	bool contains(float x, float y);
 	void setHighlighted(bool h);
 	Slider();
 	Slider(float x, float y, float w, float h, int min_d, int max_d, std::string n, graphics::Brush br) :  Button(x, y, w, h, br)

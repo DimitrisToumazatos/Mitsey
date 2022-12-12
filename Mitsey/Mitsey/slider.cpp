@@ -61,12 +61,7 @@ void Slider::update()
 	cur_date = static_cast<int>(std::round(min_date + ((pos_x - min_x) / 100.0f * (max_date - min_date))));
 }
 
-bool Slider::contains(float x, float y)
-{
-	return Button::contains(x, y);
-}
-
 void Slider::setHighlighted(bool h)
 {
-	Button::m_highlighted = h;
+	m_highlighted = h;
 }

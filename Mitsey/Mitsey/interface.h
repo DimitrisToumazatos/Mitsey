@@ -2,6 +2,8 @@
 #include "widget.h"
 #include "button.h"
 #include "slider.h"
+#include "checkbox.h"
+#include <iostream>
 
 class Interface
 {
@@ -11,8 +13,10 @@ class Interface
 
 	Slider * s1 = nullptr;
 	Slider * s2= nullptr;
-
 	bool s_init = false;
+
+	CheckBox* c[6];
+	bool c_init = false;
 public:
 	void init();
 	void draw();

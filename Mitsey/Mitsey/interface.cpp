@@ -3,6 +3,8 @@
 #include "config.h"
 #include "button.h"
 #include "slider.h"
+#include "checkbox.h"
+#include <iostream>
 
 void Interface::init()
 {
@@ -38,11 +40,18 @@ void Interface::draw()
 	if (b) { b->draw(); }
 	if (s1) { s1->draw(); }
 	if (s2) { s2->draw(); }
+	if (c_init)
+	{ for (int i = 0; i<=5; i++) c[i]->draw();
+	}
+
 	
 }
 
 void Interface::update()
 {
+	graphics::MouseState ms;
+	graphics::getMouseState(ms);
+
 	if (!b_init && graphics::getGlobalTime() > 1000)
 	{
 		graphics::Brush br;
@@ -55,30 +64,7 @@ void Interface::update()
 
 	if (b)
 	{
-		graphics::MouseState ms;
-		graphics::getMouseState(ms);
-
-		float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
-		float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
-		b->update();
-
-		Button* curr_button = nullptr;
-		if (b->contains(mx, my))
-		{
-			b->setHighlighted(true);
-			curr_button = b;
-		}
-		else
-		{
-			b->setHighlighted(false);
-		}
-		//if (m_active_button) m_active_button->setActive(false);
-		if (ms.button_left_pressed && curr_button)
-		{
-			m_active_button = curr_button;
-			m_active_button->setActive(true);
-		}
-
+		b->update(ms);
 	}
 
 	if (!s_init && graphics::getGlobalTime() > 1000)
@@ -96,5 +82,25 @@ void Interface::update()
 	{
 		s1->update(); 
 		s2->update();
+	}
+
+	if (!c_init && graphics::getGlobalTime() > 1000)
+	{
+		graphics::Brush br;
+		br.fill_color[0] = 0.2f;
+		br.fill_color[1] = 0.2f;
+		br.fill_color[2] = 0.2f;
+		c[0] = new CheckBox(40, 20, 70, 15, "Drama", br);
+		c[1] = new CheckBox(120, 20, 70, 15, "Comedy", br);
+		c[2] = new CheckBox(200, 20, 70, 15, "Adveture", br);
+		c[3] = new CheckBox(40, 50, 70, 15, "Sci-Fi", br);
+		c[4] = new CheckBox(120, 50, 70, 15, "Horror", br);
+		c[5] = new CheckBox(200, 50, 70, 15, "Romance", br);
+		c_init = true;
+	}
+
+	if (c_init)
+	{
+		for (int i = 0; i <= 5; i++) c[i]->update(ms);
 	}
 }
