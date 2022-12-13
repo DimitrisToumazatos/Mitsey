@@ -16,7 +16,6 @@ void Slider::draw()
 	Button::draw();										// draw slider button
 
 	graphics::Brush txt;
-	graphics::setFont(std::string(ASSET_PATH) + "RINGM.ttf");
 	graphics::drawText(min_x - 4, pos_y + 20, 13, date_start, txt);		// draw minimum date
 	graphics::drawText(max_x - 22, pos_y + 20, 13, date_end, txt);		// draw maximum date
 	graphics::drawText(min_x + 20, pos_y - 20, 13, date_cur, txt);		// draw maximum date

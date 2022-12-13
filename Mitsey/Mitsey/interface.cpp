@@ -8,7 +8,12 @@
 
 void Interface::init()
 {
-		graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
+	graphics::setFont(std::string(ASSET_PATH) + "RINGM.ttf");
+	graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
+	graphics::Brush bru;
+	bru.outline_opacity = .0f;
+	bru.texture = std::string(ASSET_PATH) + "love-actually5.png";
+	m = new Movie("Love Actually", "2002", "Richard    Curtis", "Romance", "Alan    Rickman", "Hugh    Grant", bru);
 }
 
 void Interface::draw()
@@ -37,7 +42,8 @@ void Interface::draw()
 
 	graphics::drawRect(CANVAS_WIDTH/2, 40, CANVAS_WIDTH, 80, br);
 
-	if (b) { b->draw(); }
+	//if (b) { b->draw(); }
+	m->draw();
 	if (s1) { s1->draw(); }
 	if (s2) { s2->draw(); }
 	if (c_init)
@@ -52,7 +58,7 @@ void Interface::update()
 	graphics::MouseState ms;
 	graphics::getMouseState(ms);
 
-	if (!b_init && graphics::getGlobalTime() > 1000)
+	/*if (!b_init && graphics::getGlobalTime() > 1000)
 	{
 		graphics::Brush br;
 		br.fill_color[0] = 1.0f;
@@ -65,9 +71,9 @@ void Interface::update()
 	if (b)
 	{
 		b->update(ms);
-	}
+	}*/
 
-	if (!s_init && graphics::getGlobalTime() > 1000)
+	if (!s_init)
 	{
 		graphics::Brush br;
 		br.fill_color[0] = 1.0f;
@@ -84,7 +90,7 @@ void Interface::update()
 		s2->update();
 	}
 
-	if (!c_init && graphics::getGlobalTime() > 1000)
+	if (!c_init)
 	{
 		graphics::Brush br;
 		br.fill_color[0] = 0.2f;

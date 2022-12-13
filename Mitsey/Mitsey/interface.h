@@ -4,12 +4,15 @@
 #include "slider.h"
 #include "checkbox.h"
 #include <iostream>
+#include "movie.h"
 
 class Interface
 {
-	Button* b = nullptr;
-	Button* m_active_button = nullptr;
-	bool b_init = false;
+	//Button* b = nullptr;
+	//Button* m_active_button = nullptr;
+	//bool b_init = false;
+
+	Movie* m = nullptr;
 
 	Slider * s1 = nullptr;
 	Slider * s2= nullptr;
@@ -23,7 +26,7 @@ public:
 	void update();
 	~Interface()
 	{
-		if (b) { delete b; }
+		//if (b) { delete b; }
 		delete s1;
 		delete s2;
 	}

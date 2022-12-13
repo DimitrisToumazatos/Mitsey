@@ -144,6 +144,7 @@
     <ClCompile Include="checkbox.cpp" />
     <ClCompile Include="interface.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="movie.cpp" />
     <ClCompile Include="slider.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="checkbox.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="interface.h" />
+    <ClInclude Include="movie.h" />
     <ClInclude Include="slider.h" />
     <ClInclude Include="widget.h" />
   </ItemGroup>
