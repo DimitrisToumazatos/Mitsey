@@ -35,6 +35,11 @@ public:
 	{
 		visible = v;
 	}
+
+	bool getVisible()
+	{
+		return visible;
+	}
 	~Movie();
     void draw();
 	void init();

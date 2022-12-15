@@ -12,7 +12,7 @@ class Interface
 	//Button* m_active_button = nullptr;
 	//bool b_init = false;
 
-	Movie* m = nullptr;
+	Movie* m[12];
 
 	Slider * s1 = nullptr;
 	Slider * s2= nullptr;
