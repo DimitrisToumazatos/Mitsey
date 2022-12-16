@@ -1,5 +1,34 @@
-﻿  interface.cpp
+﻿  button.cpp
+  checkbox.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\checkbox.cpp(18,17): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+  interface.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(29,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(30,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(31,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(31,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(32,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(29,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(30,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(31,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(32,1): warning C4154: deletion of an array expression; conversion to pointer supplied
   main.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(29,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(30,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(31,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(31,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(32,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(29,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(30,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(31,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.h(32,1): warning C4154: deletion of an array expression; conversion to pointer supplied
+  movie.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(29,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(30,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(31,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(31,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'std::string'
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\movie.h(32,20): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
+  slider.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\slider.cpp(14,22): warning C4477: 'sprintf_s' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'std::string'
   Generating Code...
 sggd.lib(graphics.obj) : warning LNK4099: PDB 'sggd.pdb' was not found with 'sggd.lib(graphics.obj)' or at 'C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\sggd.pdb'; linking object as if no debug info
 sggd.lib(GLbackend.obj) : warning LNK4099: PDB 'sggd.pdb' was not found with 'sggd.lib(GLbackend.obj)' or at 'C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\sggd.pdb'; linking object as if no debug info
@@ -8,10 +37,4 @@ sggd.lib(fonts.obj) : warning LNK4099: PDB 'sggd.pdb' was not found with 'sggd.l
 sggd.lib(texture.obj) : warning LNK4099: PDB 'sggd.pdb' was not found with 'sggd.lib(texture.obj)' or at 'C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\sggd.pdb'; linking object as if no debug info
 sggd.lib(AudioManager.obj) : warning LNK4099: PDB 'sggd.pdb' was not found with 'sggd.lib(AudioManager.obj)' or at 'C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\sggd.pdb'; linking object as if no debug info
 sggd.lib(lodepng.obj) : warning LNK4099: PDB 'sggd.pdb' was not found with 'sggd.lib(lodepng.obj)' or at 'C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\sggd.pdb'; linking object as if no debug info
-interface.obj : error LNK2019: unresolved external symbol "public: __cdecl Widget::Widget(void)" (??0Widget@@QEAA@XZ) referenced in function "public: __cdecl Button::Button(float,float,float,float,struct graphics::Brush)" (??0Button@@QEAA@MMMMUBrush@graphics@@@Z)
-interface.obj : error LNK2019: unresolved external symbol "public: __cdecl Widget::~Widget(void)" (??1Widget@@QEAA@XZ) referenced in function "int `public: __cdecl Button::Button(float,float,float,float,struct graphics::Brush)'::`1'::dtor$1" (?dtor$1@?0???0Button@@QEAA@MMMMUBrush@graphics@@@Z@4HA)
-interface.obj : error LNK2019: unresolved external symbol "public: __cdecl Button::~Button(void)" (??1Button@@QEAA@XZ) referenced in function "int `public: __cdecl Slider::Slider(float,float,float,float,int,int,struct graphics::Brush)'::`1'::dtor$2" (?dtor$2@?0???0Slider@@QEAA@MMMMHHUBrush@graphics@@@Z@4HA)
-main.obj : error LNK2001: unresolved external symbol "public: __cdecl Button::~Button(void)" (??1Button@@QEAA@XZ)
-main.obj : error LNK2019: unresolved external symbol "public: __cdecl Slider::~Slider(void)" (??1Slider@@QEAA@XZ) referenced in function "public: void * __cdecl Slider::`scalar deleting destructor'(unsigned int)" (??_GSlider@@QEAAPEAXI@Z)
-main.obj : error LNK2019: unresolved external symbol "public: __cdecl Interface::Interface(void)" (??0Interface@@QEAA@XZ) referenced in function main
-C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\Mitseyd.exe : fatal error LNK1120: 5 unresolved externals
+  Mitsey.vcxproj -> C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\Mitseyd.exe

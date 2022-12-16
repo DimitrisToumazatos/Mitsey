@@ -28,11 +28,8 @@ void Slider::init()
 {
 }
 
-void Slider::update()
+void Slider::update(graphics::MouseState ms)
 {
-
-	graphics::MouseState ms;
-	graphics::getMouseState(ms);
 	float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
 	float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
 
@@ -63,4 +60,14 @@ void Slider::update()
 void Slider::setHighlighted(bool h)
 {
 	m_highlighted = h;
+}
+
+void Slider::setPosX(float f)
+{
+	Button::setPosX(f);
+}
+
+float Slider::getPosX()
+{
+	return Button::getPosX();
 }

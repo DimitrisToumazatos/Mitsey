@@ -14,12 +14,11 @@ class Interface
 
 	Movie* m[12];
 
-	Slider * s1 = nullptr;
-	Slider * s2= nullptr;
-	bool s_init = false;
+	Button* b[2];
+
+	Slider * s[2];
 
 	CheckBox* c[6];
-	bool c_init = false;
 public:
 	void init();
 	void draw();
@@ -27,7 +26,9 @@ public:
 	~Interface()
 	{
 		//if (b) { delete b; }
-		delete s1;
-		delete s2;
+		//delete [] s;
+		//delete [] c;
+		//delete [] m;
+		//delete [] b;
 	}
 };
