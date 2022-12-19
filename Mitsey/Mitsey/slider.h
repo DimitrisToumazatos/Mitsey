@@ -21,6 +21,7 @@ public:
 	void update(graphics::MouseState ms);
 	void setHighlighted(bool h);
 	void setPosX(float f);
+	int getDate();
 	float getPosX() override;
 	Slider();
 	Slider(float x, float y, float w, float h, int min_d, int max_d, std::string n, graphics::Brush br) :  Button(x, y, w, h, br)

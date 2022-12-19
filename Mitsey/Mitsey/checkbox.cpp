@@ -6,6 +6,16 @@ void CheckBox::setActive(bool i)
 	active = i;
 }
 
+bool CheckBox::getActive()
+{
+	return active;
+}
+
+const char* CheckBox::getType()
+{
+	return type;
+}
+
 bool CheckBox::isActive()
 {
 	return active;

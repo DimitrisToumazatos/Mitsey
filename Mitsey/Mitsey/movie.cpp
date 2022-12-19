@@ -1,5 +1,26 @@
 #include "movie.h"
 #include "config.h"
+
+void Movie::setVisible(bool v)
+{
+	visible = v;
+}
+
+int Movie::getDate()
+{
+	return date;
+}
+
+bool Movie::getVisible()
+{
+		return visible;
+}
+
+const char* Movie::getType()
+{
+	return type;
+}
+
 void Movie::draw()
 {
 	if (getVisible()) {

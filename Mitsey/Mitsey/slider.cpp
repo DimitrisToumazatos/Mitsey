@@ -67,6 +67,11 @@ void Slider::setPosX(float f)
 	Button::setPosX(f);
 }
 
+int Slider::getDate()
+{
+	return cur_date;
+}
+
 float Slider::getPosX()
 {
 	return Button::getPosX();

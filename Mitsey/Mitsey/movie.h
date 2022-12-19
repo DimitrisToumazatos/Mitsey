@@ -4,7 +4,7 @@
 
 class Movie {
 	const char* name;
-	const char* date;
+	int date;
 	const char* director;
 	const char* type;
 	const char* actor0;
@@ -17,7 +17,7 @@ class Movie {
 	char text3[100];
 
 public:
-	Movie(const char n[], const char d[], const char dir[], const char t[], const char a0[], const char a1[], graphics::Brush i)
+	Movie(const char n[], int d, const char dir[], const char t[], const char a0[], const char a1[], graphics::Brush i)
 	{
 		name = n;
 		date = d;
@@ -26,21 +26,16 @@ public:
 		actor0 = a0;
 		actor1 = a1;
 		img = i;
-		sprintf_s(text0, "Category:   %s", *(std::string*)type);
-		sprintf_s(text1, "Director:    %s", *(std::string*)director);
-		sprintf_s(text2, "Stars:                 %s,    %s", *(std::string*)actor0, *(std::string*)actor1);
-		sprintf_s(text3, "Year:                    %s", *(std::string*)date);
-	};
-	void setVisible(bool v)
-	{
-		visible = v;
-	}
 
-	bool getVisible()
-	{
-		return visible;
-	}
-	~Movie();
+		sprintf_s(text0, "Category:   %s", type);
+		sprintf_s(text1, "Director:    %s", director);
+		sprintf_s(text2, "Stars:                 %s,    %s", actor0, actor1);
+		sprintf_s(text3, "Year:                    %d", date);
+	};
+	int getDate();
+	bool getVisible();
+	const char* getType();
+	void setVisible(bool v);
     void draw();
 	void init();
 };

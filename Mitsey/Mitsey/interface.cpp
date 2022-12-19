@@ -5,6 +5,8 @@
 #include "slider.h"
 #include "checkbox.h"
 #include <iostream>
+#include <list>
+#include <iterator>
 
 void Interface::init()
 {
@@ -15,53 +17,52 @@ void Interface::init()
 
 	// Initializing the movie library
 	br.texture = std::string(ASSET_PATH) + "love-actually5.png";
-	m[0] = new Movie("Love Actually", "2002", "Richard    Curtis", "Romance", "Alan    Rickman", "Hugh    Grant", br);
+	m[0] = new Movie("Love Actually", 2002, "Richard    Curtis", "Romance", "Alan    Rickman", "Hugh    Grant", br);
 
 	br.texture = std::string(ASSET_PATH) + "star_wars.png";
-	m[1] = new Movie("Star Wars: Episode V - The Empire Strikes Back", "1980", "Irvin      Kershner", "Sci-Fi", "Mark      Hamill", "Harrison       Ford", br);
+	m[1] = new Movie("Star Wars: Episode V - The Empire Strikes Back", 1980, "Irvin      Kershner", "Sci-Fi", "Mark      Hamill", "Harrison       Ford", br);
 	
 	br.texture = std::string(ASSET_PATH) + "Indiana_Jones.png";
-	m[2] = new Movie("Indiana Jones and the Last Crusade", "1989", "Steven       Spielberg", "Adventure", "Harrison       Ford", "Sean      Connery", br);
+	m[2] = new Movie("Indiana Jones and the Last Crusade", 1989, "Steven       Spielberg", "Adventure", "Harrison       Ford", "Sean      Connery", br);
 	
 	br.texture = std::string(ASSET_PATH) + "saw.png";
-	m[3] = new Movie("Saw", "2004", "James       Wan", "Horror", "Cary       Elwes", "Cary      Elwes", br);
+	m[3] = new Movie("Saw", 2004, "James       Wan", "Horror", "Cary       Elwes", "Cary      Elwes", br);
 	
 	br.texture = std::string(ASSET_PATH) + "shutter_island.png";
-	m[4] = new Movie("Shutter Island", "2010", "Martin       Scorsese", "Drama", "Leonardo      DiCaprio", "Mark      Ruffalo", br);
+	m[4] = new Movie("Shutter Island", 2010, "Martin       Scorsese", "Drama", "Leonardo      DiCaprio", "Mark      Ruffalo", br);
 	
 	br.texture = std::string(ASSET_PATH) + "this_is_the_end.png";
-	m[5] = new Movie("This Is the End", "2013", "Seth       Rogen", "Comedy", "James       Franco", "Seth      Rogen", br);
+	m[5] = new Movie("This Is the End", 2013, "Seth       Rogen", "Comedy", "James       Franco", "Seth      Rogen", br);
 	
 	br.texture = std::string(ASSET_PATH) + "insterstallar.png";
-	m[6] = new Movie("Interstellar", "2014", "Christopher       Nolan", "Sci-Fi", "Matthew       McConaughey", "Anne       Hathaway", br);
+	m[6] = new Movie("Interstellar", 2014, "Christopher       Nolan", "Sci-Fi", "Matthew       McConaughey", "Anne       Hathaway", br);
 	
 	br.texture = std::string(ASSET_PATH) + "titanic.png";
-	m[7] = new Movie("Titanic", "1997", "James       Cameron", "Drama", "Leonardo       DiCaprio", "Kate       Winslet", br);
+	m[7] = new Movie("Titanic", 1997, "James       Cameron", "Drama", "Leonardo       DiCaprio", "Kate       Winslet", br);
 	
 	br.texture = std::string(ASSET_PATH) + "white_chicks.png";
-	m[8] = new Movie("White Chicks", "2004", "Keenen       Ivory       Wayans", "Comedy", "Marlon       Wayans", "Shawn       Wayans", br);
+	m[8] = new Movie("White Chicks", 2004, "Keenen       Ivory       Wayans", "Comedy", "Marlon       Wayans", "Shawn       Wayans", br);
 	
 	br.texture = std::string(ASSET_PATH) + "pulp_fiction.png";
-	m[9] = new Movie("Pulp Fiction", "1994", "Quentin       Tarantino", "Adveture", "John       Travolta", "Uma       Thurman", br);
+	m[9] = new Movie("Pulp Fiction", 1994, "Quentin       Tarantino", "Adveture", "John       Travolta", "Uma       Thurman", br);
 	
 	br.texture = std::string(ASSET_PATH) + "the_shining.png";
-	m[10] = new Movie("The Shining", "1980", "Stanley       Kubrick", "Horror", "Jack       Nicholson", "Shelley       Duvall", br);
+	m[10] = new Movie("The Shining", 1980, "Stanley       Kubrick", "Horror", "Jack       Nicholson", "Shelley       Duvall", br);
 
 	br.texture = std::string(ASSET_PATH) + "50_shades.png";
-	m[11] = new Movie("Fifty Shades of Grey", "2015", "Sam       Taylor-Johnson", "Romance", "Dakota       Johnson", "Jamie       Dornan", br);
+	m[11] = new Movie("Fifty Shades of Grey", 2015, "Sam       Taylor-Johnson", "Romance", "Dakota       Johnson", "Jamie       Dornan", br);
 	
-	m[4]->setVisible(true);
 	br.texture = "";
 
 	// Initializing the two Sliders
 	br.fill_color[0] = 1.0f;
 	br.fill_color[1] = 0.5f;
 	br.fill_color[2] = 0.0f;
-	s[0] = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 1980, 2015, "To:   ", br);
-	s[1] = new Slider(CANVAS_WIDTH - 200, 40, 10, 10, 1980, 2015, "From:   ", br);
+	s[0] = new Slider(CANVAS_WIDTH - 70, 40, 10, 10, 1980, 2015, "To:   ", br);		// s[0] is the max date
+	s[1] = new Slider(CANVAS_WIDTH - 200, 40, 10, 10, 1980, 2015, "From:   ", br);	// s[1] is the min date
 	float temp = s[0]->getPosX();  
 	s[0]->setPosX(temp + 50.f);		// set the starting position for each slider
-	s[1]->setPosX(temp - 180.f);
+	s[1]->setPosX(temp - 180.f);	
 
 	// Initializing the six Check Boxes
 	br.fill_color[0] = 0.2f;
@@ -123,4 +124,41 @@ void Interface::update()
 	for (int i = 0; i <= 5; i++) c[i]->update(ms);		// update the check boxes' state	
 	for (int i = 0; i <= 1; i++) b[i]->update(ms);		// update the buttons' state
 
+	std::list<Movie*> movies;							// makes the movie list
+	bool flag = false;									// this variable checks if at least 1 checkbox is active 
+	for (int i=0; i<=11; i++ )
+	{
+		for (int j = 0; j <= 5; j++)
+		{
+			if (c[j]->getActive())
+			{
+				flag = true;
+				// (ActiveCategory == MovieCategory) && (date <= maxDate) && (date >=minDate)
+				if ((strcmp(m[i]->getType(), c[j]->getType()) == 0) && (m[i]->getDate() <= s[0]->getDate()) && (m[i]->getDate() >= s[1]->getDate()))
+				{
+					movies.push_back(m[i]);
+				}
+			}
+		}
+
+		if (!flag)		// case if no checkboxes are active 
+		{
+			// (date <= maxDate) && (date >=minDate)
+			if ((m[i]->getDate() <= s[0]->getDate()) && (m[i]->getDate() >= s[1]->getDate()))
+			{
+				movies.push_back(m[i]);
+			}
+		}
+		m[i]->setVisible(false); // set all movies as not visible
+	}
+	
+	if (movies.size()>=1) 
+	{
+		/*std::list<Movie*>::iterator it;
+		for (it = movies.begin(); it != movies.end(); it++)
+		{
+			(*it)->setVisible(false);
+		}*/
+		(*movies.begin())->setVisible(true);	// set a movie visible 
+	}
 }
