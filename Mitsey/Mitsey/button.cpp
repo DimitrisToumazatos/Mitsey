@@ -61,38 +61,52 @@ float Button::getW()
 	return width;
 }
 
+void Button::setVisible(bool t)
+{
+	visible = t;
+}
+
 void Button::update(graphics::MouseState ms)
 {
 	float mx = graphics::windowToCanvasX((float)ms.cur_pos_x);
 	float my = graphics::windowToCanvasY((float)ms.cur_pos_y);
+
 	if (contains(mx, my))
 	{
 		setHighlighted(true);
+		if (ms.button_left_pressed)
+		{
+			setActive(true);
+		}
+		else
+		{
+			setActive(false);
+
+		}
 	}
 	else
 	{
 		setHighlighted(false);
 	}
-	if (ms.button_left_pressed)
-	{
-		setActive(true);
-	}
-	else
-	{
-		setActive(false);
+}
 
-	}
+bool Button::getActive()
+{
+	return m_active;
 }
 
 void Button::draw()
 {
-	style.outline_opacity = .0f;
-	if (m_highlighted)
+	if (visible)
 	{
-		style.outline_opacity = 1.0f;
-	}
+		style.outline_opacity = .0f;
+		if (m_highlighted)
+		{
+			style.outline_opacity = 1.0f;
+		}
 
-	graphics::drawRect(getPosX(), getPosY(), getW(), getH(), style);
+		graphics::drawRect(getPosX(), getPosY(), getW(), getH(), style);
+	}
 }
 
 void Button::init()

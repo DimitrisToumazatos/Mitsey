@@ -11,7 +11,7 @@
 void Interface::init()
 {
 	graphics::setFont(std::string(ASSET_PATH) + "RINGM.ttf");
-	graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
+	//graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
 	graphics::Brush br;
 	br.outline_opacity = .0f;
 
@@ -20,10 +20,10 @@ void Interface::init()
 	m[0] = new Movie("Love Actually", 2002, "Richard    Curtis", "Romance", "Alan    Rickman", "Hugh    Grant", br);
 
 	br.texture = std::string(ASSET_PATH) + "star_wars.png";
-	m[1] = new Movie("Star Wars: Episode V - The Empire Strikes Back", 1980, "Irvin      Kershner", "Sci-Fi", "Mark      Hamill", "Harrison       Ford", br);
+	m[1] = new Movie("Star Wars: Episode V", 1980, "Irvin      Kershner", "Sci-Fi", "Mark      Hamill", "Harrison       Ford", br);
 	
 	br.texture = std::string(ASSET_PATH) + "Indiana_Jones.png";
-	m[2] = new Movie("Indiana Jones and the Last Crusade", 1989, "Steven       Spielberg", "Adventure", "Harrison       Ford", "Sean      Connery", br);
+	m[2] = new Movie("Indiana Jones III", 1989, "Steven       Spielberg", "Adventure", "Harrison       Ford", "Sean      Connery", br);
 	
 	br.texture = std::string(ASSET_PATH) + "saw.png";
 	m[3] = new Movie("Saw", 2004, "James       Wan", "Horror", "Cary       Elwes", "Cary      Elwes", br);
@@ -44,7 +44,7 @@ void Interface::init()
 	m[8] = new Movie("White Chicks", 2004, "Keenen       Ivory       Wayans", "Comedy", "Marlon       Wayans", "Shawn       Wayans", br);
 	
 	br.texture = std::string(ASSET_PATH) + "pulp_fiction.png";
-	m[9] = new Movie("Pulp Fiction", 1994, "Quentin       Tarantino", "Adveture", "John       Travolta", "Uma       Thurman", br);
+	m[9] = new Movie("Pulp Fiction", 1994, "Quentin       Tarantino", "Adventure", "John       Travolta", "Uma       Thurman", br);
 	
 	br.texture = std::string(ASSET_PATH) + "the_shining.png";
 	m[10] = new Movie("The Shining", 1980, "Stanley       Kubrick", "Horror", "Jack       Nicholson", "Shelley       Duvall", br);
@@ -68,12 +68,12 @@ void Interface::init()
 	br.fill_color[0] = 0.2f;
 	br.fill_color[1] = 0.2f;
 	br.fill_color[2] = 0.2f;
-	c[0] = new CheckBox(40, 20, 70, 15, "Drama", br);
-	c[1] = new CheckBox(120, 20, 70, 15, "Comedy", br);
-	c[2] = new CheckBox(200, 20, 70, 15, "Adveture", br);
-	c[3] = new CheckBox(40, 50, 70, 15, "Sci-Fi", br);
-	c[4] = new CheckBox(120, 50, 70, 15, "Horror", br);
-	c[5] = new CheckBox(200, 50, 70, 15, "Romance", br);
+	c[0] = new CheckBox(45, 20, 75, 15, "Drama", br);
+	c[1] = new CheckBox(125, 20, 75, 15, "Comedy", br);
+	c[2] = new CheckBox(205, 20, 75, 15, "Adventure", br);
+	c[3] = new CheckBox(45, 50, 75, 15, "Sci-Fi", br);
+	c[4] = new CheckBox(125, 50, 75, 15, "Horror", br);
+	c[5] = new CheckBox(205, 50, 75, 15, "Romance", br);
 
 	// Initializing the left and right button
 	br.texture = std::string(ASSET_PATH) + "button-left.png";
@@ -122,11 +122,10 @@ void Interface::update()
 
 	for (int i = 0; i <= 1; i++) s[i]->update(ms);		// update the sliders' state
 	for (int i = 0; i <= 5; i++) c[i]->update(ms);		// update the check boxes' state	
-	for (int i = 0; i <= 1; i++) b[i]->update(ms);		// update the buttons' state
 
 	std::list<Movie*> movies;							// makes the movie list
 	bool flag = false;									// this variable checks if at least 1 checkbox is active 
-	for (int i=0; i<=11; i++ )
+	for (int i = 0; i <= 11; i++)
 	{
 		for (int j = 0; j <= 5; j++)
 		{
@@ -151,14 +150,39 @@ void Interface::update()
 		}
 		m[i]->setVisible(false); // set all movies as not visible
 	}
-	
-	if (movies.size()>=1) 
+
+
+	for (int i = 0; i <= 1; i++) b[i]->update(ms);		// update the buttons' state
+
+	if (b[0]->getActive()) iter--;
+	if (b[1]->getActive()) iter++;
+
+	if (movies.size() >= 1)
 	{
-		/*std::list<Movie*>::iterator it;
-		for (it = movies.begin(); it != movies.end(); it++)
+		std::list<Movie*>::iterator it;
+		it = movies.begin();
+
+		//if (iter == movies.size()) iter = 0;
+
+		for (int j = 0; j < iter - 1; j++)
 		{
-			(*it)->setVisible(false);
-		}*/
-		(*movies.begin())->setVisible(true);	// set a movie visible 
+			it++;
+		}
+		(*it)->setVisible(true);	// set a movie visible 
+
+		b[0]->setVisible(false);
+		b[1]->setVisible(true);
+		if (it != movies.begin()) b[0]->setVisible(true);
+		if (iter >= movies.size()) b[1]->setVisible(false);
+
+	}
+	else
+	{
+		graphics::Brush br;
+		std::string text = "Sorry, no movie matches the given filters.";
+		graphics::drawText(CANVAS_WIDTH / 4 + 5, CANVAS_HEIGHT / 2, 20, text, br);
+		b[0]->setVisible(false);
+		b[1]->setVisible(false);
+
 	}
 }

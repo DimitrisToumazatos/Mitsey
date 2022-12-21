@@ -13,12 +13,10 @@ class Interface
 	//bool b_init = false;
 
 	Movie* m[12];
-
 	Button* b[2];
-
 	Slider * s[2];
-
 	CheckBox* c[6];
+	int iter = 0;
 public:
 	void init();
 	void draw();
