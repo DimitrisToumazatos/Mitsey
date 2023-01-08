@@ -11,7 +11,7 @@
 void Interface::init()
 {
 	graphics::setFont(std::string(ASSET_PATH) + "RINGM.ttf");
-	//graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
+	graphics::playMusic(std::string(ASSET_PATH) + "background-music.mp3", 0.2f, true, 2000);   // background music 
 	graphics::Brush br;
 	br.outline_opacity = .0f;
 
@@ -34,7 +34,7 @@ void Interface::init()
 	br.texture = std::string(ASSET_PATH) + "this_is_the_end.png";
 	m[5] = new Movie("This Is the End", 2013, "Seth       Rogen", "Comedy", "James       Franco", "Seth      Rogen", br);
 	
-	br.texture = std::string(ASSET_PATH) + "insterstallar.png";
+	br.texture = std::string(ASSET_PATH) + "interstellar.png";
 	m[6] = new Movie("Interstellar", 2014, "Christopher       Nolan", "Sci-Fi", "Matthew       McConaughey", "Anne       Hathaway", br);
 	
 	br.texture = std::string(ASSET_PATH) + "titanic.png";
