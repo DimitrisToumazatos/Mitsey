@@ -78,6 +78,7 @@ void Interface::init()
 	// Initializing the left and right button
 	br.texture = std::string(ASSET_PATH) + "button-left.png";
 	b[0] = new Button(CANVAS_WIDTH / 3 - 50, CANVAS_HEIGHT / 2 - 50, 50, 50, br);
+	b[0]->setVisible(false);
 
 	br.texture = std::string(ASSET_PATH) + "button-right.png";
 	b[1] = new Button(CANVAS_WIDTH * 2 / 3 + 50, CANVAS_HEIGHT / 2 - 50, 50, 50, br);	
@@ -166,7 +167,14 @@ void Interface::update()
 
 		for (int j = 0; j < iter - 1; j++)
 		{
-			it++;
+			if (j < movies.size() - 1)
+			{
+				it++;
+			}
+			else
+			{
+				iter = movies.size() - 1;
+			}
 		}
 		(*it)->setVisible(true);	// set a movie visible 
 
@@ -177,6 +185,14 @@ void Interface::update()
 		b[1]->setVisible(true);
 		if (it != movies.begin()) b[0]->setVisible(true);
 		if (iter >= movies.size()) b[1]->setVisible(false);
+		
+		//b[0]->setVisible(false);
+		//b[1]->setVisible(false);
+		
+		//if (it != movies.begin()) b[0]->setVisible(true);
+		//if (it != movies.end()) b[1]->setVisible(true);
+
+
 
 	}
 	else // if no movie matches the given filters

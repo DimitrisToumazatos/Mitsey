@@ -1,2 +1,3 @@
-﻿  slider.cpp
+﻿  interface.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.cpp(176,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Mitsey.vcxproj -> C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\Mitseyd.exe

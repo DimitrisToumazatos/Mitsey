@@ -1,9 +1,8 @@
 ﻿  interface.cpp
-  main.cpp
-  slider.cpp
+C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\Mitsey\interface.cpp(176,29): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   Generating code
-  44 of 321 functions (13.7%) were compiled, the rest were copied from previous compilation.
-    43 functions were new in current compilation
-    23 functions had inline decision re-evaluated but remain unchanged
+  1 of 321 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Mitsey.vcxproj -> C:\Users\ditou\Desktop\Progarmming in C ++\Mitsey\Mitsey\bin\Mitsey.exe
