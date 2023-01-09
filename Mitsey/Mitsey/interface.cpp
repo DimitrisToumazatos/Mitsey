@@ -170,13 +170,16 @@ void Interface::update()
 		}
 		(*it)->setVisible(true);	// set a movie visible 
 
+
+		// check if the visible movie is either the first or the last
+		// and accordingly set the visibility of the next/previous buttons  
 		b[0]->setVisible(false);
 		b[1]->setVisible(true);
 		if (it != movies.begin()) b[0]->setVisible(true);
 		if (iter >= movies.size()) b[1]->setVisible(false);
 
 	}
-	else
+	else // if no movie matches the given filters
 	{
 		graphics::Brush br;
 		std::string text = "Sorry, no movie matches the given filters.";

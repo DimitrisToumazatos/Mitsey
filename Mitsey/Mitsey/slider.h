@@ -12,7 +12,7 @@ class Slider : Button
 	float min_x;
 	float start_x;
 	float start_y;
-	std::string name;
+	std::string name;	
 	graphics::Brush line;
 	
 public:

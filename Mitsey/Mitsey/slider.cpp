@@ -2,16 +2,24 @@
 #include"graphics.h"
 #include <cstdio>
 #include "config.h"
+#include <sstream>
+#include <string>
+#include <iostream>
 
 void Slider::draw()
 {
 	graphics::drawRect(start_x, start_y, 100, 2, line);		// draw slider line
+
+	// create slider messages (min date, max date, current date) 
 	char date_start[5];
 	sprintf_s(date_start, "%d", min_date);
+
 	char date_end[5];
 	sprintf_s(date_end, "%d", max_date);
-	char date_cur[15];
-	sprintf_s(date_cur, "%s%d",name, cur_date);
+
+	std::ostringstream os;
+	os << name << cur_date;
+	std::string date_cur = os.str();
 
 	Button::draw();										// draw slider button
 
