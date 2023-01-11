@@ -8,10 +8,6 @@
 
 class Interface
 {
-	//Button* b = nullptr;
-	//Button* m_active_button = nullptr;
-	//bool b_init = false;
-
 	Movie* m[12];
 	Button* b[2];
 	Slider * s[2];
@@ -21,12 +17,4 @@ public:
 	void init();
 	void draw();
 	void update();
-	~Interface()
-	{
-		//if (b) { delete b; }
-		//delete [] s;
-		//delete [] c;
-		//delete [] m;
-		//delete [] b;
-	}
 };

@@ -3,8 +3,8 @@
 #include "graphics.h"
 
 class Movie {
-	const char* name;
 	int date;
+	const char* name;
 	const char* director;
 	const char* type;
 	const char* actor0;

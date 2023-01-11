@@ -9,7 +9,6 @@ public:
 	{
 		type = t;
 	}
-	~CheckBox();
 	void setActive(bool i);
 	bool getActive();
 	const char* getType();
