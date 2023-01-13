@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
 #include "graphics.h"
+#include <iostream>
 
 class Movie {
 	int date;
@@ -17,6 +17,12 @@ class Movie {
 	char text3[100];
 
 public:
+	int getDate();
+	bool getVisible();
+	const char* getType();
+	void setVisible(bool v);
+	void draw();
+	void init();
 	Movie(const char n[], int d, const char dir[], const char t[], const char a0[], const char a1[], graphics::Brush i)
 	{
 		name = n;
@@ -31,11 +37,7 @@ public:
 		sprintf_s(text1, "Director:    %s", director);
 		sprintf_s(text2, "Stars:                 %s,    %s", actor0, actor1);
 		sprintf_s(text3, "Year:                    %d", date);
-	};
-	int getDate();
-	bool getVisible();
-	const char* getType();
-	void setVisible(bool v);
-    void draw();
-	void init();
+	}
+	Movie();
+	~Movie() {}
 };

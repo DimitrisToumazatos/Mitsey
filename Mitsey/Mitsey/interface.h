@@ -1,10 +1,10 @@
 #pragma once
-#include "widget.h"
-#include "button.h"
+//#include "widget.h"
+//#include "button.h"
 #include "slider.h"
 #include "checkbox.h"
-#include <iostream>
 #include "movie.h"
+#include <iostream>
 
 class Interface
 {
@@ -17,4 +17,25 @@ public:
 	void init();
 	void draw();
 	void update();
+	Interface(){}
+	~Interface()
+	{
+		for (int i = 0; i < 11; i++)
+		{
+			delete m[i];
+		}
+		for (int i = 0; i < 1; i++)
+		{
+			delete b[i];
+		}
+		for (int i = 0; i < 1; i++)
+		{
+			delete s[i];
+		}
+		for (int i = 0; i < 5; i++)
+		{
+			delete c[i];
+		}
+	}
+
 };

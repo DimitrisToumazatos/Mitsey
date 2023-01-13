@@ -37,4 +37,5 @@ public:
 		line.fill_color[1] = 1.0f;
 		line.fill_color[2] = 1.0f;
 	}
+	~Slider(){}
 };

@@ -39,4 +39,5 @@ public:
 		setW(w);
 		setStyle(br);
 	}
+	~Button(){}
 };
